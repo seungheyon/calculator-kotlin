@@ -1,15 +1,17 @@
 import calculator.controller.CalculatorController
+import calculator.domain.service.PostfixCalculatorService
 import calculator.domain.util.*
 
 fun main(args: Array<String>) {
     //println("Hello World!")
     val inputUtil = KeyInput()
     val outputUtil = ConsoleOutput()
-    val expressionGenerator = ExpressionGenerator()
-    val expressionValidator = ExpressionValidator()
+    val operationFactory = OperationFactory()
+    val postfixExpressionGenerator = PostfixExpressionGenerator(operationFactory)
+    val postfixCalculatorService = PostfixCalculatorService(operationFactory)
 
     val calculatorController = CalculatorController(
-        inputUtil, outputUtil, expressionGenerator, expressionValidator
+        inputUtil, outputUtil, postfixExpressionGenerator, postfixCalculatorService
     )
     calculatorController.start()
     // Try adding program arguments via Run/Debug configuration.

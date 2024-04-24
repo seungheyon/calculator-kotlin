@@ -1,4 +1,6 @@
-package calculator.domain.operation
+package calculator.domain.util
+
+import calculator.domain.operation.*
 
 class OperationFactory {
     fun createOperation(operator : String) : AbstractOperation {

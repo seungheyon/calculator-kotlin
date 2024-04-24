@@ -1,8 +1,8 @@
 package calculator.domain.service
 
-import calculator.domain.operation.*
+import calculator.domain.util.OperationFactory
 
-class CalculateService(operator : String, operand1 : Int, operand2 : Int, operationFactory: OperationFactory) {
+class SimpleCalculatorService(operator : String, operand1 : Int, operand2 : Int, operationFactory: OperationFactory){
     private val operator : String
     private val operand1 : Int
     private val operand2 : Int
