@@ -15,5 +15,5 @@
 3. Postfix Calculator : 
 	후위표현식과 스택을 이용한 계산기입니다. PostfixExpressionGenerator 구현체가 입력 문자열로부터 피연산자와 연산자를 구분하고 검증하며 
 	후위 표현식 알고리즘에 따라 expression  (List<String>) 을 반환하고 컨트롤러에서는 CalculatorService 인터페이스의 구현체 중 하나인
-	PostfixCalculatorService 의 calculate() 메서드를 통해 연산을 수행합니다. 
+	PostfixCalculatorService 의 calculate() 메서드를 통해 후위 표현식 연산을 수행합니다. 
    
