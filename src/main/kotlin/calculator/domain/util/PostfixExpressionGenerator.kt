@@ -1,5 +1,7 @@
 package calculator.domain.util
 
+import calculator.domain.Operand
+import calculator.domain.Operator
 import calculator.domain.operation.AbstractOperation
 import java.util.LinkedList
 import java.util.Stack
@@ -13,16 +15,15 @@ class PostfixExpressionGenerator(private val operationFactory: OperationFactory)
 
         for (term in splitString){
             try{
-                term.toInt()
-                postfixExpression.add(term)
+                 // 피연산자에 대한 검증 진행
+                postfixExpression.add(Operand(term).getOperandString())
             }
             catch(e : NumberFormatException){
-                val operation = operationFactory.createOperation(term)
+                val operation = operationFactory.createOperation(Operator(term).getOperator()) // 연산자에 대한 검증 진행
                 if(operatorStack.empty()||operatorStack.peek().priority < operation.priority){
                     operatorStack.push(operation)
                     continue
                 }
-
                 while(!operatorStack.empty()&&operatorStack.peek().priority >= operation.priority){
                     postfixExpression.add(operatorStack.pop().convertToString())
                 }

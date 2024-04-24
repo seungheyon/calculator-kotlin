@@ -1,24 +1,17 @@
 package calculator.domain.util
 
-import java.util.LinkedList
-import java.util.Queue
+import calculator.domain.Operand
+import calculator.domain.Operator
 
-class SimpleInfixExpressionGenerator {
+class SimpleInfixExpressionGenerator : ExpressionGenerator {
 
 
-     fun generateExpression(operation: String): Queue<String> {
-        val stringList = operation.split(" ")
-
+     override fun generateExpression(inputString: String): List<String> {
+        val stringList = inputString.split(" ")
         val restrictedQueueSize = 3;
         if(stringList.size>restrictedQueueSize){
-            throw IllegalStateException()
+            throw IllegalStateException("Please enter one formula for one input")
         }
-        var expressionQueue : Queue<String> = LinkedList<String>()
-        for(item in stringList){
-            if(!expressionQueue.offer(item)){
-                throw IllegalStateException()
-            }
-        }
-        return expressionQueue
+        return stringList
     }
 }

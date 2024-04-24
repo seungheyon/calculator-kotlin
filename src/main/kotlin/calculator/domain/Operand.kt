@@ -1,14 +1,20 @@
 package calculator.domain
 
 class Operand(operandString: String) {
-    val operand : Int
+    private val operandValue : Int
 
     init {
-        this.operand = validateOperandIsInt(operandString)
+        this.operandValue = validateOperandIsInt(operandString)
     }
 
     private fun validateOperandIsInt(operandString: String) : Int {
         return operandString.toInt()
     }
+
+    fun getOperand() : Int{
+        return operandValue
+    }
+
+    fun getOperandString() : String = operandValue.toString()
 
 }

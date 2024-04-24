@@ -8,7 +8,6 @@ class CalculatorController(
     private val inputUtil : InputUtil,
     private val outputUtil: OutputUtil,
     private val expressionGenerator: ExpressionGenerator,
-    //private val expressionValidator: ExpressionValidator,
     private val calculatorService: CalculatorService
     ) {
 
@@ -17,7 +16,6 @@ class CalculatorController(
             try{
                 outputUtil.printline("Please enter the operator and operand separated by spaces.")
                 val expression = expressionGenerator.generateExpression(inputUtil.getInput())
-                //val calculateService : SimpleCalculatorService = expressionValidator.validateExpress(expression)
                 val result = calculatorService.calculate(expression)
                 outputUtil.printline(result)
                 break

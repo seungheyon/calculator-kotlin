@@ -10,7 +10,7 @@ class OperationFactory {
             "*" -> MultiplyOperation()
             "/" -> DivideOperation()
             "%" -> ModOperation()
-            else -> throw IllegalArgumentException()
+            else -> throw IllegalArgumentException("Invalid operator input found in OperationFactory")
         }
     }
 }

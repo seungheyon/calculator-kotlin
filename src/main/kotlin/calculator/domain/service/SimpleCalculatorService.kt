@@ -1,22 +1,15 @@
 package calculator.domain.service
 
+import calculator.domain.Operand
+import calculator.domain.Operator
 import calculator.domain.util.OperationFactory
 
-class SimpleCalculatorService(operator : String, operand1 : Int, operand2 : Int, operationFactory: OperationFactory){
-    private val operator : String
-    private val operand1 : Int
-    private val operand2 : Int
-    private val operationFactory : OperationFactory
+class SimpleCalculatorService(val operationFactory: OperationFactory) : CalculatorService{
 
-    init {
-        this.operator = operator
-        this.operand1 = operand1
-        this.operand2 = operand2
-        this.operationFactory = operationFactory
-    }
-
-    fun calculate() : Int {
-        val operation = operationFactory.createOperation(operator)
+    override fun calculate(expression : List<String>) : Int {
+        val operand1 = Operand(expression[0]).getOperand()
+        val operand2 = Operand(expression[2]).getOperand()
+        val operation = operationFactory.createOperation(Operator(expression[1]).getOperator())
         return operation.operation(operand1, operand2)
     }
 }
