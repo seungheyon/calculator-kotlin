@@ -8,11 +8,11 @@
 입력된 수식을 문자열 리스트로 나타내는 ExpressionGenerator 인터페이스와 연산을 수행하는 CalculatorService 인터페이스의 구현체 클래스를 따로 작성하여 
 두 가지 계산기에 대해 확장에 유연하도록 설계했습니다.
 
-1. Simple Infix Calculator
+1. Simple Infix Calculator : 
 	간단한 중위연산 계산기입니다. SimpleInfixExpression 구현체는 입력 문자열로부터 3개의 항을 분리하여 expression (List<String>)을 
 	반환하고, 컨트롤러에서는 CalculatorService 의 구현체 중 하나인 SimpleCalculatorService 의 calculate() 메서드를 통해 연산을 수행합니다.
 
-3. Postfix Calculator
+3. Postfix Calculator : 
 	후위표현식과 스택을 이용한 계산기입니다. PostfixExpressionGenerator 구현체가 입력 문자열로부터 피연산자와 연산자를 구분하고 검증하며 
 	후위 표현식 알고리즘에 따라 expression  (List<String>) 을 반환하고 컨트롤러에서는 CalculatorService 인터페이스의 구현체 중 하나인
 	PostfixCalculatorService 의 calculate() 메서드를 통해 연산을 수행합니다. 
