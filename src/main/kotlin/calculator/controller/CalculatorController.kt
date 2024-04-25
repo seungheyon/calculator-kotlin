@@ -19,7 +19,7 @@ class CalculatorController(
             } catch (e: IllegalArgumentException) {
                 println(e.message)
             } catch (e: IllegalStateException) {
-                println("Please enter one formula for one input")
+                println(e.message)
             } catch (e: NumberFormatException) {
                 println("Please enter a valid number")
             }
