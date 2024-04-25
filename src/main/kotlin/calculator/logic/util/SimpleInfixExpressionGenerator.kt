@@ -1,10 +1,7 @@
-package calculator.domain.util
+package calculator.logic.util
 
-import calculator.domain.Operand
-import calculator.domain.Operator
-
+@Deprecated("PostfixCalculator 전에 구현한 수식 변환 클래스로 현재는 사용하지 않음")
 class SimpleInfixExpressionGenerator : ExpressionGenerator {
-
 
      override fun generateExpression(inputString: String): List<String> {
         val stringList = inputString.split(" ")

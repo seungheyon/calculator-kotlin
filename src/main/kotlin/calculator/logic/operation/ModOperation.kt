@@ -1,4 +1,4 @@
-package calculator.domain.operation
+package calculator.logic.operation
 
 class ModOperation : AbstractOperation{
     override val priority = 12

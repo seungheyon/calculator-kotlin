@@ -1,4 +1,4 @@
-package calculator.domain.operation
+package calculator.logic.operation
 
 interface AbstractOperation {
     val priority : Int

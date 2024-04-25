@@ -1,14 +1,11 @@
 import calculator.controller.CalculatorController
-import calculator.domain.service.PostfixCalculatorService
-import calculator.domain.util.*
+import calculator.logic.calculator.PostfixCalculator
+import calculator.logic.util.*
 
 fun main(args: Array<String>) {
     //println("Hello World!")
-    val inputUtil = KeyInput()
-    val outputUtil = ConsoleOutput()
-    val operationFactory = OperationFactory()
-    val postfixExpressionGenerator = PostfixExpressionGenerator(operationFactory)
-    val postfixCalculatorService = PostfixCalculatorService(operationFactory)
+    val postfixExpressionGenerator = PostfixExpressionGenerator()
+    val postfixCalculatorService = PostfixCalculator()
 
     val calculatorController = CalculatorController(
         inputUtil, outputUtil, postfixExpressionGenerator, postfixCalculatorService

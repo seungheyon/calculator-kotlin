@@ -1,4 +1,4 @@
-package calculator.domain.util
+package calculator.logic.util
 
 interface ExpressionGenerator {
     fun generateExpression(inputString : String) : List<String>
