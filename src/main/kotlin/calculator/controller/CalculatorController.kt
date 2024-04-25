@@ -5,7 +5,7 @@ import calculator.logic.util.*
 
 class CalculatorController(
     private val expressionGenerator: ExpressionGenerator,
-    private val calculatorService: Calculator
+    private val calculator: Calculator
 ) {
 
     fun start() {
@@ -13,7 +13,7 @@ class CalculatorController(
             try {
                 println("Please enter the operator and operand separated by spaces.")
                 val expression = expressionGenerator.generateExpression(readLine().toString())
-                val result = calculatorService.calculate(expression)
+                val result = calculator.calculate(expression)
                 println(result)
                 break
             } catch (e: IllegalArgumentException) {

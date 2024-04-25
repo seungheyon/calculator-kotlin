@@ -5,11 +5,11 @@ import calculator.logic.util.*
 fun main(args: Array<String>) {
     //println("Hello World!")
     val postfixExpressionGenerator = PostfixExpressionGenerator()
-    val postfixCalculatorService = PostfixCalculator()
+    val postfixCalculator = PostfixCalculator()
 
     val calculatorController = CalculatorController(
         expressionGenerator = postfixExpressionGenerator,
-        calculatorService = postfixCalculatorService
+        calculator = postfixCalculator
     )
     calculatorController.start()
 }
